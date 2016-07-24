@@ -15,12 +15,12 @@ module.exports = {
 		console.log(username + " -- " + password);
 
     if (!username || !password) {
-      return res.json(401, {err: 'email and password required'});
+      return res.json(401, {err: 'username and password required'});
     }
 
     Users.findOne({username: username}, function (err, user) {
       if (!user) {
-        return res.json(401, {err: 'invalid email or password'});
+        return res.json(401, {err: 'invalid username or password'});
       }
 
       Users.comparePassword(password, user, function (err, valid) {
@@ -29,7 +29,7 @@ module.exports = {
         }
 
         if (!valid) {
-          return res.json(401, {err: 'invalid email or password'});
+          return res.json(401, {err: 'invalid username or password'});
         } else {
           res.json({
             user: user,
