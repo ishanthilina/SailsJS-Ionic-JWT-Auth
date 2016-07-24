@@ -29,8 +29,13 @@ module.exports = function (req, res, next) {
   }
 
   jwToken.verify(token, function (err, token) {
+    console.log("Called!");
     if (err) return res.json(401, {err: 'Invalid Token!'});
     req.token = token; // This is the decrypted token or the payload you provided
-    next();
+    Users.findOne({id: token.id}).exec(function findOneCB(err, found){
+      if(err) next(err);
+      req.currentUser = found;
+      next();
+  });
   });
 };

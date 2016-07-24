@@ -7,8 +7,8 @@
 
 module.exports = {
   index: function (req, res) {
-    console.log(req.param("username"));
-    console.log(req.param("password"));
+    //console.log(req.param("username"));
+    //console.log(req.param("password"));
     var username = req.body.username;
     var password = req.body.password;
 

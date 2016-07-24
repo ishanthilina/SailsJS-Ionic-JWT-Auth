@@ -20,5 +20,9 @@ module.exports = {
         res.json(200, {user: user, token: jwToken.issue({id: user.id})});
       }
     });
+  },
+  find: function (req, res) {
+    console.log(req.currentUser);
+    res.json(200, {user: req.currentUser});
   }
 };
