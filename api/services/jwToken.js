@@ -1,5 +1,5 @@
 /**
- * jwToken
+ * jwToken - https://thesabbir.com/how-to-use-json-web-token-authentication-with-sails-js/
  *
  * @description :: JSON Webtoken Service for sails
  * @help        :: See https://github.com/auth0/node-jsonwebtoken & http://sailsjs.org/#!/documentation/concepts/Services

@@ -7,14 +7,18 @@
 
 module.exports = {
   index: function (req, res) {
-    var email = req.param('email');
-    var password = req.param('password');
+    console.log(req.param("username"));
+    console.log(req.param("password"));
+    var username = req.body.username;
+    var password = req.body.password;
 
-    if (!email || !password) {
+		console.log(username + " -- " + password);
+
+    if (!username || !password) {
       return res.json(401, {err: 'email and password required'});
     }
 
-    Users.findOne({email: email}, function (err, user) {
+    Users.findOne({email: username}, function (err, user) {
       if (!user) {
         return res.json(401, {err: 'invalid email or password'});
       }
