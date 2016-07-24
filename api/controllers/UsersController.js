@@ -12,6 +12,7 @@ module.exports = {
     }
     Users.create(req.body).exec(function (err, user) {
       if (err) {
+        console.log("Error! " + err);
         return res.json(err.status, {err: err});
       }
       // If user created successfuly we return user and token as response

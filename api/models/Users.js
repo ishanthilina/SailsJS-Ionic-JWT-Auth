@@ -13,10 +13,15 @@ module.exports = {
   schema: true,
 
   attributes: {
-    email: {
-      type: 'email',
+    username: {
+      type: 'string',
       required: 'true',
       unique: true // Yes unique one
+    },
+
+    fullName: {
+      type: 'string',
+      required: 'true'
     },
 
     encryptedPassword: {

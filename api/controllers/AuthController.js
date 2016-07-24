@@ -18,7 +18,7 @@ module.exports = {
       return res.json(401, {err: 'email and password required'});
     }
 
-    Users.findOne({email: username}, function (err, user) {
+    Users.findOne({username: username}, function (err, user) {
       if (!user) {
         return res.json(401, {err: 'invalid email or password'});
       }
